@@ -6,6 +6,7 @@ suit_name_values = {}
 card_type_values = {}
 cards = []
 
+# Lets set up the dictionaries and set deck of cards
 for i,suit in enumerate(suits):
     suit_name_values[suit] = i
     for j,ctype in enumerate(card_types):
@@ -13,6 +14,12 @@ for i,suit in enumerate(suits):
 
         if len(cards) != len (card_types):
             card_type_values[str(ctype)] = j + 1
+
+def get_value(suit, ctype):
+    val = int(card_type_values[ctype])
+    if val > 10:
+        return 10
+    return 10
 
 class Deck(object):
     def __init__(this):
