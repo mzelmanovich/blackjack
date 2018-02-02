@@ -2,11 +2,17 @@ import random
 
 suits = ['Spades', 'Diamonds', 'Clubs', 'Hearts']
 card_types = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King']
-
+suit_name_values = {}
+card_type_values = {}
 cards = []
-for suit in suits:
-    for ctype in card_types:
+
+for i,suit in enumerate(suits):
+    suit_name_values[suit] = i
+    for j,ctype in enumerate(card_types):
         cards.append((suit, str(ctype)))
+
+        if len(cards) != len (card_types):
+            card_type_values[str(ctype)] = j + 1
 
 class Deck(object):
     def __init__(this):
@@ -38,3 +44,5 @@ class Deck(object):
 
 deck = Deck()
 print deck.next()
+print suit_name_values
+print card_type_values
